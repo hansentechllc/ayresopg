@@ -289,3 +289,187 @@ input, textarea { width:100%; display:block; margin-top:8px; padding:13px 0; bor
 @media (prefers-reduced-motion:reduce) {
   .service-hover-detail, .detail-accent { transition:none; }
 }
+
+
+/* Responsive leadership portrait */
+.portrait-placeholder {
+  width: 100%;
+  min-height: 0;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  position: relative;
+  background: #ddd9d0;
+}
+
+.portrait-placeholder .responsive-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
+
+@media (max-width: 800px) {
+  .portrait-placeholder {
+    width: min(100%, 560px);
+    aspect-ratio: 4 / 5;
+    margin-inline: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .portrait-placeholder {
+    aspect-ratio: 3 / 4;
+  }
+}
+
+/* Requested refinements */
+.split-section { border-top: 1px solid var(--line); }
+
+@media (hover: hover) and (pointer: fine) {
+  .service-card > .service-number,
+  .service-card > .service-icon,
+  .service-card > h3,
+  .service-card > p,
+  .service-card > a {
+    transition: opacity .28s ease, transform .38s cubic-bezier(.22,1,.36,1);
+  }
+
+  .service-card .service-hover-detail {
+    top: 0; right: 0; bottom: 0; left: 0;
+    display: flex; align-items: center;
+    padding: 42px;
+    background: transparent;
+    border-left: 0;
+    color: var(--ink);
+    font-size: 17px;
+    line-height: 1.65;
+    opacity: 0;
+    transform: translateY(12px);
+    pointer-events: none;
+    z-index: 5;
+  }
+
+  .service-card:hover { background: transparent; }
+  .service-card:hover::before,
+  .service-card:hover::after { opacity: 0; }
+
+  .service-card:hover > .service-number,
+  .service-card:hover > .service-icon,
+  .service-card:hover > h3,
+  .service-card:hover > p,
+  .service-card:hover > a {
+    opacity: 0;
+    transform: translateY(-8px);
+    pointer-events: none;
+  }
+
+  .service-card:hover .service-hover-detail {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (hover: none), (pointer: coarse) {
+  .service-hover-detail { display: none; }
+}
+
+.testimonial-card {
+  border-radius: 24px;
+  overflow: hidden;
+}
+@media (max-width: 800px) {
+  .testimonial-card { border-radius: 18px; }
+}
+
+
+/* === Service-card interaction refinement ===
+   Restore the colored hover character while keeping the card surface transparent. */
+@media (hover: hover) and (pointer: fine) {
+  .service-card:hover {
+    background: transparent;
+  }
+
+  /* Restore each card's original colored mouseover artwork. */
+  .service-card:hover::before {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  /* Keep the secondary decorative circle subtle rather than removing it. */
+  .service-card:hover::after {
+    opacity: .35;
+    transform: scale(1.7);
+  }
+
+  /* Only the expanded copy is visible over the hover artwork. */
+  .service-card:hover > .service-number,
+  .service-card:hover > .service-icon,
+  .service-card:hover > h3,
+  .service-card:hover > p,
+  .service-card:hover > a {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .service-card .service-hover-detail {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 0;
+    padding: 38px;
+    background: transparent;
+    border: 0;
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  .service-card:hover .service-hover-detail,
+  .service-card:focus-within .service-hover-detail {
+    opacity: 1;
+    transform: none;
+    visibility: visible;
+  }
+}
+
+/* Responsive cleanup:
+   remove the old static hover-detail layout that created empty vertical space. */
+@media (max-width: 800px) {
+  .service-card {
+    min-height: 280px;
+    padding: 28px;
+  }
+
+  .service-card h3 {
+    margin-top: 48px;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .service-card .service-hover-detail {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      margin: 0;
+      padding: 28px;
+      font-size: 15px;
+      line-height: 1.55;
+    }
+  }
+}
+
+/* Real touch devices keep the normal card layout and do not reserve any
+   space for desktop-only hover copy. */
+@media (hover: none), (pointer: coarse) {
+  .service-hover-detail {
+    display: none !important;
+    position: absolute !important;
+  }
+
+  .service-card {
+    min-height: 0;
+  }
+}

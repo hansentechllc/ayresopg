@@ -21,6 +21,7 @@ const revealTargets = [
   [".service-card", "reveal-pop"],
   [".split-art", "reveal-left"],
   [".split-copy > *", "reveal-right"],
+  [".approach-visual", "reveal-pop"],
   [".team-layout > div:first-child > *", "reveal-left"],
   [".portrait-placeholder", "reveal-pop"],
   [".contact-layout > div:first-child > *", "reveal-left"],

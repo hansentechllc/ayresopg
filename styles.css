@@ -177,7 +177,7 @@ input, textarea { width:100%; display:block; margin-top:8px; padding:13px 0; bor
 
 /* Testimonials */
 .testimonials { border-top:1px solid var(--line); overflow:hidden; }
-.testimonial-heading { display:flex; justify-content:space-between; align-items:end; gap:40px; margin:35px 0 55px; }
+.testimonial-heading { display:flex; justify-content:space-between; align-items:end; gap:40px; margin:5px 0 55px; }
 .testimonial-heading h2 { margin:0; }
 .testimonial-heading p { max-width:360px; margin:0 0 5px; color:var(--muted); font-size:17px; }
 .testimonial-slider { position:relative; min-height:360px; max-width:980px; margin:auto; }
@@ -471,5 +471,256 @@ input, textarea { width:100%; display:block; margin-top:8px; padding:13px 0; bor
 
   .service-card {
     min-height: 0;
+  }
+}
+
+/* 03 / Our Approach - left-aligned like the other content sections */
+#approach.split-section {
+  display: block;
+}
+#approach .split-art {
+  display: none;
+}
+#approach .split-copy {
+  width: 100%;
+  max-width: 900px;
+  margin: 0;
+  text-align: left;
+}
+#approach .section-label {
+  margin-bottom: 8px;
+}
+#approach .split-copy h3 {
+  max-width: 760px;
+}
+#approach .split-copy p,
+#approach .split-copy ul {
+  max-width: 900px;
+  margin-left: 0;
+  margin-right: 0;
+}
+#approach .split-copy ul {
+  padding-left: 22px;
+}
+@media (max-width: 800px) {
+  #approach .split-copy {
+    max-width: none;
+  }
+}
+
+/* Approach visual process panel */
+#approach.split-section {
+  display:grid;
+  grid-template-columns:minmax(0,1.55fr) minmax(280px,.75fr);
+  gap:clamp(55px,7vw,105px);
+  align-items:start;
+}
+#approach .split-copy { max-width:860px; }
+.approach-visual {
+  position:sticky; top:135px; min-height:520px; margin-top:42px;
+  padding:54px 38px; border:1px solid var(--line); border-radius:28px;
+  overflow:hidden;
+  background:
+    radial-gradient(circle at 92% 8%, rgba(179,119,0,.18), transparent 31%),
+    radial-gradient(circle at 4% 92%, rgba(157,185,177,.30), transparent 35%),
+    rgba(232,229,221,.38);
+}
+.approach-visual::before {
+  content:""; position:absolute; width:190px; height:190px; right:-85px; top:-80px;
+  border:1px solid rgba(29,41,39,.14); border-radius:50%;
+}
+.approach-visual-line {
+  position:absolute; top:82px; bottom:82px; left:60px; width:1px;
+  background:linear-gradient(to bottom,var(--accent),var(--teal),var(--ink)); opacity:.65;
+}
+.approach-step {
+  position:relative; display:grid; grid-template-columns:46px 1fr; align-items:center;
+  gap:20px; min-height:125px; z-index:1;
+}
+.approach-step + .approach-step { margin-top:22px; }
+.approach-step span {
+  width:46px; height:46px; display:grid; place-items:center; border-radius:50%;
+  background:var(--paper); border:1px solid var(--line); font-size:11px;
+  font-weight:700; letter-spacing:.08em;
+}
+.approach-step:nth-of-type(2) span { border-color:rgba(179,119,0,.45); }
+.approach-step:nth-of-type(3) span { border-color:rgba(157,185,177,.8); }
+.approach-step:nth-of-type(4) span { border-color:rgba(29,41,39,.5); }
+.approach-step strong {
+  font-family:"Playfair Display",serif; font-size:clamp(22px,2vw,30px);
+  line-height:1.15; font-weight:500;
+}
+@media(max-width:900px){
+  #approach.split-section { grid-template-columns:1fr; gap:42px; }
+  .approach-visual { position:relative; top:auto; width:100%; min-height:0; margin-top:0; padding:34px 28px; }
+  .approach-visual-line { top:58px; bottom:58px; left:50px; }
+  .approach-step { min-height:95px; }
+}
+
+
+/* =========================================================
+   AOPG COLOR STUDY #1 — EXECUTIVE CHARCOAL + ROYAL BLUE
+   Charcoal: #25282D | Royal Blue: #2457C5
+   ========================================================= */
+:root {
+  --ink: #25282D;
+  --muted: #69717D;
+  --paper: #F6F6F4;
+  --accent: #2457C5;
+  --teal: #9AAED8;
+  --line: #D9DCE2;
+}
+
+/* Header / base surfaces */
+.site-header {
+  background: rgba(246,246,244,.94);
+}
+.site-nav a:hover,
+.text-link:hover {
+  color: var(--accent);
+  opacity: 1;
+}
+
+/* Hero: blue + slate + charcoal */
+.shape-one { background: #2457C5; }
+.shape-two { background: #9AAED8; }
+.shape-three { background: #25282D; }
+
+/* Buttons */
+.button {
+  background: #25282D;
+  border-color: #25282D;
+  color: #fff;
+}
+.button:hover {
+  background: #2457C5;
+  border-color: #2457C5;
+  color: #fff;
+}
+
+/* Service cards — preserve individual hover personality */
+.service-card::before {
+  background:
+    radial-gradient(circle at 85% 10%, rgba(36,87,197,.28), transparent 34%),
+    linear-gradient(135deg, transparent 55%, rgba(154,174,216,.18));
+}
+.service-card:nth-child(2)::before {
+  background:
+    radial-gradient(circle at 15% 85%, rgba(154,174,216,.38), transparent 36%),
+    linear-gradient(135deg, transparent 55%, rgba(36,87,197,.13));
+}
+.service-card:nth-child(3)::before {
+  background:
+    radial-gradient(circle at 85% 85%, rgba(78,112,184,.30), transparent 35%),
+    linear-gradient(135deg, rgba(36,87,197,.10), transparent 60%);
+}
+.service-card:nth-child(4)::before {
+  background:
+    radial-gradient(circle at 15% 15%, rgba(36,87,197,.25), transparent 35%),
+    linear-gradient(135deg, transparent 55%, rgba(154,174,216,.18));
+}
+.service-card:hover {
+  box-shadow: 0 28px 60px rgba(37,40,45,.13);
+  border-color: rgba(36,87,197,.35);
+}
+.service-icon {
+  border-color: rgba(36,87,197,.22);
+}
+.service-card:hover .service-icon {
+  background: rgba(255,255,255,.52);
+}
+
+/* Testimonials */
+.testimonial-card {
+  background: #ECEFF5;
+}
+.quote-mark {
+  color: #2457C5;
+}
+.testimonial-controls button:hover {
+  background: #2457C5;
+  border-color: #2457C5;
+  color: white;
+}
+.testimonial-dot.active {
+  background: #2457C5;
+}
+
+/* Contact becomes the strong charcoal anchor */
+.contact {
+  background: #25282D;
+}
+.contact .section-label,
+.contact p {
+  color: #C5CAD3;
+}
+input, textarea {
+  border-bottom-color: #687181;
+}
+.contact .button {
+  background: #fff;
+  color: #25282D;
+  border-color: #fff;
+}
+.contact .button:hover {
+  background: #2457C5;
+  border-color: #2457C5;
+  color: #fff;
+}
+
+/* Portrait placeholder tone */
+.portrait-placeholder {
+  background: #E5E7EB;
+}
+
+/* Approach process panel */
+.approach-visual {
+  background:
+    radial-gradient(circle at 92% 8%, rgba(36,87,197,.20), transparent 31%),
+    radial-gradient(circle at 4% 92%, rgba(154,174,216,.34), transparent 35%),
+    rgba(235,237,242,.62);
+}
+.approach-visual::before {
+  border-color: rgba(36,87,197,.18);
+}
+.approach-visual-line {
+  background: linear-gradient(to bottom, #2457C5, #9AAED8, #25282D);
+}
+.approach-step:nth-of-type(2) span { border-color: rgba(36,87,197,.60); }
+.approach-step:nth-of-type(3) span { border-color: rgba(154,174,216,.95); }
+.approach-step:nth-of-type(4) span { border-color: rgba(37,40,45,.55); }
+
+/* Detailed services page */
+.detail-shape-one { background: #9AAED8; }
+.detail-shape-two { background: #2457C5; }
+.detail-shape-three { background: #25282D; }
+
+.detail-accent-one {
+  background: #2457C5;
+}
+.detail-accent-two {
+  background: #9AAED8;
+}
+.detail-accent-three {
+  background: #25282D;
+}
+.detail-accent-four {
+  background: #E6E9EF;
+  border-color: #2457C5;
+}
+
+/* Small blue emphasis without overwhelming the typography */
+.eyebrow,
+.section-label {
+  color: #667181;
+}
+.services-more .button span,
+.detail-cta .button span {
+  color: inherit;
+}
+
+@media (max-width: 800px) {
+  .site-nav {
+    background: #F6F6F4;
   }
 }

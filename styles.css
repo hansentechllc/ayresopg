@@ -923,3 +923,161 @@ h3 { line-height: 1.08; }
   border-color: #F6F6F4;
   transform: translateY(-2px);
 }
+
+
+/* =========================================================
+   HYBRID UPDATE
+   Previous AOPG design + reimagined Hero Art & Portrait Style
+   ========================================================= */
+
+/* Reimagined hero artwork, while preserving the original hero layout */
+.hero-art {
+  min-height: 620px;
+  position: relative;
+  overflow: hidden;
+  background: #E8EBF2;
+  border-radius: 0 0 0 140px;
+}
+
+.hero-art .shape {
+  position: absolute;
+}
+
+.hero-art .shape-one {
+  width: 86%;
+  height: 58%;
+  left: 22%;
+  top: -8%;
+  background: #2457C5;
+  border-radius: 0 0 0 140px;
+}
+
+.hero-art .shape-two {
+  width: 70%;
+  height: 52%;
+  left: -15%;
+  bottom: -4%;
+  background: #9AAED8;
+  border-radius: 0 120px 0 0;
+}
+
+.hero-art .shape-three {
+  width: 35%;
+  height: 35%;
+  right: 0;
+  bottom: 0;
+  background: #25282D;
+  border-radius: 120px 0 0 0;
+}
+
+/* Reimagined portrait framing */
+.portrait-placeholder {
+  width: 100%;
+  min-height: 0;
+  aspect-ratio: 4 / 5;
+  position: relative;
+  overflow: hidden;
+  background: #E5E7EB;
+  border-radius: 0 100px 0 0;
+  box-shadow: -28px 28px 0 #E6EAF3;
+}
+
+.portrait-placeholder .responsive-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
+
+/* A very subtle blue accent behind the portrait so it connects to the hero */
+.profile {
+  position: relative;
+}
+
+.profile::before {
+  content: "";
+  position: absolute;
+  width: 190px;
+  height: 190px;
+  left: -42px;
+  bottom: -34px;
+  border-radius: 50%;
+  border: 1px solid rgba(36,87,197,.13);
+  pointer-events: none;
+  z-index: -1;
+}
+
+@media (max-width: 900px) {
+  .hero-art {
+    min-height: 480px;
+    border-radius: 0 0 0 100px;
+  }
+
+  .hero-art .shape-one {
+    border-radius: 0 0 0 100px;
+  }
+
+  .hero-art .shape-two {
+    border-radius: 0 90px 0 0;
+  }
+
+  .hero-art .shape-three {
+    border-radius: 90px 0 0 0;
+  }
+}
+
+@media (max-width: 800px) {
+  .hero-art {
+    min-height: 360px;
+    border-radius: 0 0 0 72px;
+  }
+
+  .hero-art .shape-one {
+    border-radius: 0 0 0 72px;
+  }
+
+  .hero-art .shape-two {
+    border-radius: 0 64px 0 0;
+  }
+
+  .hero-art .shape-three {
+    border-radius: 64px 0 0 0;
+  }
+
+  .portrait-placeholder {
+    width: min(100%, 560px);
+    margin-inline: auto;
+    border-radius: 0 72px 0 0;
+    box-shadow: -16px 16px 0 #E6EAF3;
+  }
+
+  .profile::before {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-art {
+    min-height: 310px;
+  }
+
+  .portrait-placeholder {
+    aspect-ratio: 3 / 4;
+    border-radius: 0 54px 0 0;
+    box-shadow: -11px 11px 0 #E6EAF3;
+  }
+}
+
+
+/* === Blue section labels from the reimagined concept === */
+.section-label {
+  color: #2457C5;
+}
+
+/* Keep the label legible on the dark contact background while
+   retaining the blue accent treatment. */
+.contact .section-label {
+  color: #7FA2EE;
+}

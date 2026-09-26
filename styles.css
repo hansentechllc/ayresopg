@@ -582,9 +582,9 @@ input, textarea { width:100%; display:block; margin-top:8px; padding:13px 0; bor
 }
 
 /* Hero: blue + slate + charcoal */
-.shape-one { background: #2457C5; }
+.shape-one { background: #144DD8; }
 .shape-two { background: #9AAED8; }
-.shape-three { background: #25282D; }
+.shape-three { background: #32373E; }
 
 /* Buttons */
 .button {
@@ -723,4 +723,187 @@ input, textarea {
   .site-nav {
     background: #F6F6F4;
   }
+}
+
+
+/* Responsive AOPG navigation logo */
+.site-header {
+  min-height: 82px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  flex: 0 1 auto;
+  width: clamp(180px, 22vw, 275px);
+  line-height: 0;
+}
+
+.brand img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 64px;
+  object-fit: contain;
+  object-position: left center;
+}
+
+@media (max-width: 900px) {
+  .brand {
+    width: clamp(165px, 32vw, 225px);
+  }
+
+  .brand img {
+    max-height: 54px;
+  }
+}
+
+@media (max-width: 520px) {
+  .site-header {
+    min-height: 68px;
+  }
+
+  .brand {
+    width: min(52vw, 190px);
+  }
+
+  .brand img {
+    max-height: 44px;
+  }
+}
+
+
+/* === Service icon + button refinement === */
+
+/* Remove circular containers from the service-card icons.
+   Keep the symbols themselves as a clean graphic accent. */
+.service-icon {
+  width: auto;
+  height: auto;
+  min-width: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  font-size: 30px;
+  line-height: 1;
+}
+
+.service-card:hover .service-icon {
+  background: transparent;
+}
+
+/* Reverse the primary button colors on hover:
+   default = charcoal with white type
+   hover = white with charcoal type/border. */
+.button:hover {
+  background: #fff;
+  color: var(--ink);
+  border-color: var(--ink);
+}
+
+/* Contact starts with the inverse treatment, so reverse it the other way. */
+.contact .button {
+  background: #fff;
+  color: var(--ink);
+  border-color: #fff;
+}
+
+.contact .button:hover {
+  background: var(--ink);
+  color: #fff;
+  border-color: #fff;
+}
+
+/* Keep the mobile icon placement tidy now that there is no circle container. */
+@media (max-width: 800px) {
+  .service-icon {
+    top: 28px;
+    right: 28px;
+    width: auto;
+    height: auto;
+    font-size: 27px;
+  }
+}
+
+
+/* === Corrected button treatment ===
+   Static: royal blue
+   Hover: charcoal */
+.button {
+  background: #2457C5;
+  color: #fff;
+  border-color: #2457C5;
+}
+
+.button:hover {
+  background: #25282D;
+  color: #fff;
+  border-color: #25282D;
+}
+
+/* Apply the same behavior in the dark Contact section. */
+.contact .button {
+  background: #2457C5;
+  color: #fff;
+  border-color: #2457C5;
+}
+
+.contact .button:hover {
+  background: #25282D;
+  color: #fff;
+  border-color: #25282D;
+}
+
+
+/* === Typography update ===
+   Primary/default: League Spartan
+   Secondary/supporting: Montserrat */
+html,
+body,
+button,
+input,
+textarea,
+select {
+  font-family: "League Spartan", sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6,
+.brand,
+.button,
+.service-card h3,
+.service-detail-copy h2,
+.approach-step strong,
+.testimonial-card blockquote {
+  font-family: "League Spartan", sans-serif;
+}
+
+p,
+li,
+.eyebrow,
+.section-label,
+.service-number,
+.service-detail-index,
+.testimonial-person,
+.site-footer,
+.site-nav,
+input,
+textarea,
+.contact-form,
+.service-hover-detail {
+  font-family: "Montserrat", sans-serif;
+}
+
+/* League Spartan benefits from slightly tighter headline leading. */
+h1 { line-height: .96; }
+h2 { line-height: 1.02; }
+h3 { line-height: 1.08; }
+
+.testimonial-card blockquote {
+  line-height: 1.22;
+  font-weight: 500;
+}
+
+.approach-step strong {
+  line-height: 1.08;
+  font-weight: 600;
 }

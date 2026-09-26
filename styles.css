@@ -560,13 +560,13 @@ input, textarea { width:100%; display:block; margin-top:8px; padding:13px 0; bor
 
 /* =========================================================
    AOPG COLOR STUDY #1 — EXECUTIVE CHARCOAL + ROYAL BLUE
-   Charcoal: #25282D | Royal Blue: #2457C5
+   Charcoal: #25282D | Royal Blue: #144DD8
    ========================================================= */
 :root {
   --ink: #25282D;
   --muted: #69717D;
   --paper: #F6F6F4;
-  --accent: #2457C5;
+  --accent: #144DD8;
   --teal: #9AAED8;
   --line: #D9DCE2;
 }
@@ -593,8 +593,8 @@ input, textarea { width:100%; display:block; margin-top:8px; padding:13px 0; bor
   color: #fff;
 }
 .button:hover {
-  background: #2457C5;
-  border-color: #2457C5;
+  background: #144DD8;
+  border-color: #144DD8;
   color: #fff;
 }
 
@@ -635,15 +635,15 @@ input, textarea { width:100%; display:block; margin-top:8px; padding:13px 0; bor
   background: #ECEFF5;
 }
 .quote-mark {
-  color: #2457C5;
+  color: #144DD8;
 }
 .testimonial-controls button:hover {
-  background: #2457C5;
-  border-color: #2457C5;
+  background: #144DD8;
+  border-color: #144DD8;
   color: white;
 }
 .testimonial-dot.active {
-  background: #2457C5;
+  background: #144DD8;
 }
 
 /* Contact becomes the strong charcoal anchor */
@@ -663,8 +663,8 @@ input, textarea {
   border-color: #fff;
 }
 .contact .button:hover {
-  background: #2457C5;
-  border-color: #2457C5;
+  background: #144DD8;
+  border-color: #144DD8;
   color: #fff;
 }
 
@@ -684,7 +684,7 @@ input, textarea {
   border-color: rgba(36,87,197,.18);
 }
 .approach-visual-line {
-  background: linear-gradient(to bottom, #2457C5, #9AAED8, #25282D);
+  background: linear-gradient(to bottom, #144DD8, #9AAED8, #25282D);
 }
 .approach-step:nth-of-type(2) span { border-color: rgba(36,87,197,.60); }
 .approach-step:nth-of-type(3) span { border-color: rgba(154,174,216,.95); }
@@ -692,11 +692,11 @@ input, textarea {
 
 /* Detailed services page */
 .detail-shape-one { background: #9AAED8; }
-.detail-shape-two { background: #2457C5; }
+.detail-shape-two { background: #144DD8; }
 .detail-shape-three { background: #25282D; }
 
 .detail-accent-one {
-  background: #2457C5;
+  background: #144DD8;
 }
 .detail-accent-two {
   background: #9AAED8;
@@ -706,7 +706,7 @@ input, textarea {
 }
 .detail-accent-four {
   background: #E6E9EF;
-  border-color: #2457C5;
+  border-color: #144DD8;
 }
 
 /* Small blue emphasis without overwhelming the typography */
@@ -830,9 +830,9 @@ input, textarea {
    Static: royal blue
    Hover: charcoal */
 .button {
-  background: #2457C5;
+  background: #144DD8;
   color: #fff;
-  border-color: #2457C5;
+  border-color: #144DD8;
 }
 
 .button:hover {
@@ -843,9 +843,9 @@ input, textarea {
 
 /* Apply the same behavior in the dark Contact section. */
 .contact .button {
-  background: #2457C5;
+  background: #144DD8;
   color: #fff;
-  border-color: #2457C5;
+  border-color: #144DD8;
 }
 
 .contact .button:hover {
@@ -948,7 +948,7 @@ h3 { line-height: 1.08; }
   height: 58%;
   left: 22%;
   top: -8%;
-  background: #2457C5;
+  background: #144DD8;
   border-radius: 0 0 0 140px;
 }
 
@@ -1073,7 +1073,7 @@ h3 { line-height: 1.08; }
 
 /* === Blue section labels from the reimagined concept === */
 .section-label {
-  color: #2457C5;
+  color: #144DD8;
 }
 
 /* Keep the label legible on the dark contact background while

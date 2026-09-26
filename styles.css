@@ -907,3 +907,19 @@ h3 { line-height: 1.08; }
   line-height: 1.08;
   font-weight: 600;
 }
+
+
+/* === Contact submit button refinement ===
+   Softer treatment for the charcoal contact section */
+.contact .button {
+  background: #F6F6F4;
+  color: #25282D;
+  border-color: #F6F6F4;
+}
+
+.contact .button:hover {
+  background: transparent;
+  color: #F6F6F4;
+  border-color: #F6F6F4;
+  transform: translateY(-2px);
+}

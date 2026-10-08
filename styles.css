@@ -1088,3 +1088,53 @@ h3 { line-height: 1.08; }
 .contact-form .form-status.is-success { color: #dce9ff; }
 .contact-form .form-status.is-error { color: #ffd2d2; }
 .contact-form button[disabled] { opacity: .65; cursor: wait; }
+
+/* Testimonials: readable long-form quotes with no clipped content.
+   The active slide participates in normal document flow, allowing its
+   height to grow to fit the complete testimonial on every screen. */
+.testimonial-slider {
+  height: auto;
+  min-height: 0;
+  max-width: 980px;
+}
+.testimonial-card {
+  position: relative;
+  inset: auto;
+  display: none;
+  height: auto;
+  padding: clamp(28px, 4vw, 48px) clamp(24px, 5vw, 55px);
+  opacity: 1;
+  transform: none;
+  pointer-events: none;
+  overflow: visible;
+  transition: none;
+}
+.testimonial-card.active {
+  display: block;
+  opacity: 1;
+  transform: none;
+  pointer-events: auto;
+}
+.testimonial-card blockquote {
+  max-width: 820px;
+  margin: 18px 0 28px;
+  font-family: "Montserrat", sans-serif;
+  font-size: clamp(16px, 1.45vw, 19px);
+  font-weight: 400;
+  line-height: 1.75;
+  overflow-wrap: break-word;
+  white-space: normal;
+}
+.testimonial-card .quote-mark {
+  font-size: 66px;
+  line-height: .8;
+}
+.testimonial-person {
+  padding-top: 18px;
+  border-top: 1px solid #D9DCE2;
+}
+@media (max-width: 800px) {
+  .testimonial-slider { height: auto; min-height: 0; }
+  .testimonial-card { padding: 30px 26px; }
+  .testimonial-card blockquote { font-size: 16px; line-height: 1.7; }
+}

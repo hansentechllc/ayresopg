@@ -95,3 +95,46 @@ if (detailBlocks.length) {
   });
   detailBlocks.forEach(block => observer.observe(block));
 }
+
+
+// AOPG contact form: submit asynchronously to Formspree without navigating away.
+const aopgContactForm = document.querySelector('.contact-form');
+if (aopgContactForm) {
+  const status = aopgContactForm.querySelector('.form-status');
+  const submitButton = aopgContactForm.querySelector('button[type="submit"]');
+  aopgContactForm.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    if (!aopgContactForm.reportValidity()) return;
+    submitButton.disabled = true;
+    submitButton.setAttribute('aria-busy', 'true');
+    status.hidden = false;
+    status.className = 'form-status';
+    status.textContent = 'Sending your message…';
+    try {
+      const response = await fetch(aopgContactForm.action, {
+        method: 'POST',
+        body: new FormData(aopgContactForm),
+        headers: { Accept: 'application/json' }
+      });
+      if (!response.ok) {
+        let detail = '';
+        try {
+          const data = await response.json();
+          if (Array.isArray(data.errors)) detail = data.errors.map(e => e.message).filter(Boolean).join(' ');
+        } catch (_) {}
+        throw new Error(response.status === 429
+          ? 'Too many attempts. Please wait a few minutes and try again.'
+          : detail || 'We could not send your message. Please try again.');
+      }
+      aopgContactForm.reset();
+      status.classList.add('is-success');
+      status.textContent = 'Thank you! Your message has been sent successfully.';
+    } catch (error) {
+      status.classList.add('is-error');
+      status.textContent = error.message || 'Unable to send your message. Please try again.';
+    } finally {
+      submitButton.disabled = false;
+      submitButton.removeAttribute('aria-busy');
+    }
+  });
+}

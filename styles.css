@@ -1119,7 +1119,7 @@ h3 { line-height: 1.08; }
   max-width: 820px;
   margin: 18px 0 28px;
   font-family: "Montserrat", sans-serif;
-  font-size: clamp(16px, 1.45vw, 19px);
+  font-size: clamp(15px, 1.3vw, 17px);
   font-weight: 400;
   line-height: 1.75;
   overflow-wrap: break-word;
@@ -1136,5 +1136,19 @@ h3 { line-height: 1.08; }
 @media (max-width: 800px) {
   .testimonial-slider { height: auto; min-height: 0; }
   .testimonial-card { padding: 30px 26px; }
-  .testimonial-card blockquote { font-size: 16px; line-height: 1.7; }
+  .testimonial-card blockquote { font-size: 15px; line-height: 1.7; }
+}
+
+/* Match the Contact submit button to the blue Hero CTA. */
+.contact .contact-form .button {
+  background: #144DD8;
+  color: #fff;
+  border-color: #144DD8;
+}
+.contact .contact-form .button:hover,
+.contact .contact-form .button:focus-visible {
+  background: #F6F6F4;
+  color: #25282D;
+  border-color: #F6F6F4;
+  transform: none;
 }

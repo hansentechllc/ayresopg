@@ -1256,3 +1256,200 @@ h3 { line-height: 1.08; }
   #approach .split-copy ul { gap: 11px; }
   #approach .split-copy ul li { font-size: 15px; }
 }
+
+/* =========================================================
+   SERVICES PAGE — mirror the homepage hero more closely
+   Clean rectangular forms with one rounded corner, matching
+   the logo/site language. Headline sizing is left unchanged.
+   ========================================================= */
+
+/* Main hero artwork on services page */
+.services-page .detail-hero-art {
+  min-height: 500px;
+  position: relative;
+  overflow: hidden;
+  background: #E8EBF2;
+  border-radius: 0 0 0 120px;
+}
+
+.services-page .detail-shape {
+  position: absolute;
+}
+
+.services-page .detail-shape-one {
+  width: 84%;
+  height: 58%;
+  left: 21%;
+  top: -7%;
+  background: #144DD8;
+  border-radius: 0 0 0 120px;
+  transform: none;
+}
+
+.services-page .detail-shape-two {
+  width: 68%;
+  height: 51%;
+  left: -13%;
+  bottom: -3%;
+  background: #9AAED8;
+  border-radius: 0 86px 0 0;
+  transform: none;
+}
+
+.services-page .detail-shape-three {
+  width: 34%;
+  height: 34%;
+  right: 0;
+  bottom: 0;
+  background: #25282D;
+  border-radius: 86px 0 0 0;
+  transform: none;
+}
+
+/* Service detail accent art: mini version of the homepage hero */
+.services-page .detail-accent {
+  position: relative;
+  align-self: center;
+  justify-self: end;
+  width: 168px;
+  height: 168px;
+  aspect-ratio: auto;
+  opacity: 1;
+  overflow: hidden;
+  border-radius: 0 0 0 40px;
+  background: #E8EBF2;
+  transition: transform .8s cubic-bezier(.22,1,.36,1), box-shadow .45s ease;
+}
+
+.services-page .service-detail-block:hover .detail-accent {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 16px 32px rgba(37,40,45,.08);
+}
+
+/* Shared structure */
+.services-page .detail-accent::before,
+.services-page .detail-accent::after {
+  content: "";
+  position: absolute;
+}
+
+.services-page .detail-accent::before {
+  width: 82%;
+  height: 56%;
+  left: 18%;
+  top: 0;
+  background: #144DD8;
+  border-radius: 0 0 0 40px;
+}
+
+.services-page .detail-accent::after {
+  width: 64%;
+  height: 47%;
+  left: -4%;
+  bottom: 0;
+  background: #9AAED8;
+  border-radius: 0 34px 0 0;
+}
+
+/* Small charcoal block */
+.services-page .detail-accent-one {
+  box-shadow: inset 0 0 0 1px rgba(20,77,216,.04);
+  background-image:
+    linear-gradient(#25282D, #25282D);
+  background-repeat: no-repeat;
+  background-size: 33% 33%;
+  background-position: 100% 100%;
+  border-radius: 72px 0 0 0, 0 0 0 40px;
+}
+.services-page .detail-accent-two {
+  background-image:
+    linear-gradient(#25282D, #25282D);
+  background-repeat: no-repeat;
+  background-size: 31% 31%;
+  background-position: 100% 100%;
+}
+.services-page .detail-accent-three {
+  background-image:
+    linear-gradient(#25282D, #25282D);
+  background-repeat: no-repeat;
+  background-size: 34% 28%;
+  background-position: 100% 100%;
+}
+.services-page .detail-accent-four {
+  background-image:
+    linear-gradient(#25282D, #25282D);
+  background-repeat: no-repeat;
+  background-size: 29% 35%;
+  background-position: 100% 100%;
+}
+
+/* Gentle variation per offering so they don't feel copy-pasted */
+.services-page .detail-accent-two::before {
+  width: 78%;
+  left: 22%;
+}
+.services-page .detail-accent-two::after {
+  width: 58%;
+  height: 52%;
+}
+
+.services-page .detail-accent-three::before {
+  width: 74%;
+  height: 60%;
+}
+.services-page .detail-accent-three::after {
+  width: 66%;
+  height: 42%;
+}
+
+.services-page .detail-accent-four::before {
+  width: 80%;
+  height: 52%;
+}
+.services-page .detail-accent-four::after {
+  width: 60%;
+  height: 50%;
+}
+
+/* Keep heading sizing restrained/original-feeling */
+.services-page .service-detail-copy h3 {
+  margin-top: 0;
+}
+
+/* Mobile */
+@media (max-width: 800px) {
+  .services-page .detail-hero-art {
+    min-height: 360px;
+    border-radius: 0 0 0 82px;
+  }
+
+  .services-page .detail-shape-one {
+    border-radius: 0 0 0 82px;
+  }
+
+  .services-page .detail-shape-two {
+    border-radius: 0 62px 0 0;
+  }
+
+  .services-page .detail-shape-three {
+    border-radius: 62px 0 0 0;
+  }
+
+  .services-page .detail-accent {
+    width: 108px;
+    height: 108px;
+    top: 48px;
+    right: 0;
+    border-radius: 0 0 0 26px;
+    opacity: .34;
+    box-shadow: none;
+  }
+
+  .services-page .detail-accent::before {
+    border-radius: 0 0 0 26px;
+  }
+
+  .services-page .detail-accent::after {
+    border-radius: 0 18px 0 0;
+  }
+}

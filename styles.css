@@ -1152,3 +1152,25 @@ h3 { line-height: 1.08; }
   border-color: #F6F6F4;
   transform: none;
 }
+
+/* AOPG privacy policy review page */
+.privacy-hero{padding-top:92px;padding-bottom:55px;border-bottom:1px solid var(--line)}
+.privacy-hero h1{font-family:"League Spartan",sans-serif;font-size:clamp(48px,7vw,84px);font-weight:600;letter-spacing:-.035em;line-height:1.02;margin:18px 0 18px;max-width:none}
+.privacy-intro{font-family:"Montserrat",sans-serif;color:var(--muted);font-size:clamp(16px,1.7vw,19px);max-width:790px;line-height:1.7}
+.privacy-draft-alert{max-width:920px;padding:19px 24px;margin:29px 0 20px;border-left:4px solid #144DD8;background:#E9EDF8;color:#25282D;font:14px/1.7 "Montserrat",sans-serif}
+.privacy-draft-alert strong{font-weight:700}
+.privacy-updated{font:13px/1.6 "Montserrat",sans-serif;color:var(--muted)}
+.privacy-body{display:grid;grid-template-columns:minmax(190px,270px) minmax(0,1fr);align-items:start;gap:clamp(35px,6vw,96px);padding-top:66px}
+.privacy-toc{position:sticky;top:120px;font:13px/1.5 "Montserrat",sans-serif}
+.privacy-toc-label{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#144DD8;font-weight:700}
+.privacy-toc ol{padding-left:20px;display:grid;gap:14px}
+.privacy-toc a:hover,.privacy-toc a:focus-visible{color:#144DD8;text-decoration:underline;text-underline-offset:3px}
+.privacy-back{display:inline-block;margin-top:22px;font-weight:600;color:#144DD8}
+.privacy-content{min-width:0}
+.privacy-item{display:grid;grid-template-columns:42px minmax(0,1fr);gap:20px;border-bottom:1px solid var(--line);padding:0 0 40px;margin:0 0 43px;scroll-margin-top:125px}
+.privacy-index{font:700 12px "Montserrat",sans-serif;color:#144DD8;padding-top:7px}
+.privacy-item h2{font-size:clamp(23px,2.7vw,32px);font-weight:600;margin:0 0 18px;line-height:1.2}
+.privacy-item p{color:#535D6A;font:15px/1.95 "Montserrat",sans-serif;overflow-wrap:anywhere;margin:0 0 16px}
+.privacy-item .privacy-editorial-note{background:#EFF1F6;border-left:2px solid #9AAED8;padding:12px 16px;font-size:13px;color:#485363}
+@media(max-width:800px){.privacy-hero{padding-top:55px;padding-bottom:38px}.privacy-body{display:block;padding-top:38px}.privacy-toc{position:static;border-bottom:1px solid var(--line);margin-bottom:42px;padding-bottom:22px}.privacy-toc ol{grid-template-columns:repeat(2,minmax(0,1fr));display:grid;gap:12px 24px}.privacy-item{grid-template-columns:30px minmax(0,1fr);gap:12px;margin-bottom:30px;padding-bottom:28px}}
+@media(max-width:480px){.privacy-toc ol{grid-template-columns:1fr}.privacy-item p{font-size:14px;line-height:1.8}}

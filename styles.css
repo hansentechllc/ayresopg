@@ -1174,3 +1174,85 @@ h3 { line-height: 1.08; }
 .privacy-item .privacy-editorial-note{background:#EFF1F6;border-left:2px solid #9AAED8;padding:12px 16px;font-size:13px;color:#485363}
 @media(max-width:800px){.privacy-hero{padding-top:55px;padding-bottom:38px}.privacy-body{display:block;padding-top:38px}.privacy-toc{position:static;border-bottom:1px solid var(--line);margin-bottom:42px;padding-bottom:22px}.privacy-toc ol{grid-template-columns:repeat(2,minmax(0,1fr));display:grid;gap:12px 24px}.privacy-item{grid-template-columns:30px minmax(0,1fr);gap:12px;margin-bottom:30px;padding-bottom:28px}}
 @media(max-width:480px){.privacy-toc ol{grid-template-columns:1fr}.privacy-item p{font-size:14px;line-height:1.8}}
+
+/* Services: align card headings and descriptions across each desktop row.
+   Previously, the auto bottom margin on the service number shifted titles
+   according to the amount of descriptive text in each card. */
+#services .service-card > .service-number {
+  margin-bottom: 0;
+}
+#services .service-card > h3 {
+  margin-top: 68px;
+  min-height: 2.35em;
+  margin-bottom: 18px;
+}
+@media (min-width: 801px) and (max-width: 1050px) {
+  #services .service-card > h3 {
+    min-height: 3.3em;
+  }
+}
+@media (max-width: 800px) {
+  #services .service-card > h3 {
+    margin-top: 48px;
+    min-height: 0;
+  }
+}
+
+/* Services page: match AOPG primary blue for service numbers. */
+.services-page .service-detail-index { color: #144DD8; font-weight: 700; }
+
+
+/* Approach visual cleanup: remove upper-right quarter-circle and
+   limit connectors to the spaces between the numbered circles. */
+#approach .approach-visual::before {
+  content: none;
+  display: none;
+}
+#approach .approach-visual {
+  background:
+    radial-gradient(circle at 4% 92%, rgba(154,174,216,.34), transparent 35%),
+    rgba(235,237,242,.62);
+}
+#approach .approach-visual-line {
+  display: none;
+}
+#approach .approach-step:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  left: 22.5px;
+  top: calc(50% + 23px);
+  height: calc(100% - 46px + 22px);
+  width: 1px;
+  background: linear-gradient(to bottom, #144DD8, #9AAED8);
+  pointer-events: none;
+}
+#approach .approach-step span {
+  position: relative;
+  z-index: 1;
+}
+
+
+/* Approach: standard round bullets in the website's primary blue. */
+#approach .split-copy ul {
+  list-style: disc outside;
+  padding-left: 26px;
+  margin: 22px 0 30px;
+  display: grid;
+  gap: 12px;
+}
+#approach .split-copy ul li {
+  padding: 0;
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  line-height: 1.65;
+  color: #535D6A;
+}
+#approach .split-copy ul li::marker {
+  color: #144DD8;
+}
+@media (max-width: 800px) {
+  #approach .split-copy ul { gap: 11px; }
+  #approach .split-copy ul li { font-size: 15px; }
+}

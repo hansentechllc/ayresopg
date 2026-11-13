@@ -70,7 +70,7 @@ function showTestimonial(index) {
 }
 function restartTestimonialTimer() {
   clearInterval(testimonialTimer);
-  testimonialTimer = setInterval(() => showTestimonial(testimonialIndex + 1), 7000);
+  testimonialTimer = setInterval(() => showTestimonial(testimonialIndex + 1), 15000);
 }
 if (testimonialCards.length && testimonialDots) {
   testimonialCards.forEach((_, i) => {
